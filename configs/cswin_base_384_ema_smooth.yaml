@@ -1,0 +1,20 @@
+experiment_name: "cswin_base_384_ema_smooth"
+model:
+  backbone: "cswin_base_384"
+  image_size: 384
+train:
+  batch_size: 16
+  epochs: 15
+  base_lr: 0.0005
+  backbone_lr_factor: 0.1
+  pos_weight_mode: "none"
+  label_smoothing: 0.05
+  ema:
+    enabled: true
+    decay: 0.999
+augmentation:
+  coarse_dropout:
+    enabled: true
+    max_holes: 4
+    max_height: 48
+    max_width: 48

@@ -1,0 +1,22 @@
+experiment_name: "beit_base_patch16_384_baseline"
+model:
+  backbone: "beit_base_patch16_384"
+  image_size: 384
+  pretrained_file: "beit_base_patch16_384.pth"
+train:
+  batch_size: 16
+  epochs: 15
+  base_lr: 0.0001
+  backbone_lr_factor: 0.1
+  weight_decay: 0.05
+  pos_weight_mode: "none"
+  label_smoothing: 0.05
+  ema:
+    enabled: true
+    decay: 0.999
+augmentation:
+  coarse_dropout:
+    enabled: true
+    max_holes: 2
+    max_height: 32
+    max_width: 32

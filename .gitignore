@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env
+.env.*
+
+# Competition data, external predictions, and model artifacts.
+data/
+weights/
+outputs/
+docs/experiment_log.md
+*.pth
+*.pt
+*.ckpt
+*.zip

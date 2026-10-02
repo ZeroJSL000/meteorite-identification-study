@@ -1,0 +1,25 @@
+experiment_name: "swinv2_base_384_minimal_external"
+paths:
+  data_dir: "data"
+model:
+  backbone: "swinv2_base_window12to24_192to384.ms_in22k_ft_in1k"
+  image_size: 384
+  pooling: "gap"
+  pretrained_file: "swinv2_base_window12to24_192to384.ms_in22k_ft_in1k.pth"
+train:
+  batch_size: 4
+  valid_batch_size: 8
+  accumulation_steps: 8
+  epochs: 15
+  base_lr: 0.0005
+  backbone_lr_factor: 0.1
+  pos_weight_mode: "none"
+  label_smoothing: 0.05
+ema:
+  enabled: true
+  decay: 0.999
+augmentation:
+  mode: "minimal"
+inference:
+  batch_size: 8
+  target_positive_count: 86
